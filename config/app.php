@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ja',
 
     /*
     |--------------------------------------------------------------------------
@@ -178,6 +178,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        //使用するライブラリのサービスプロバイダーを追加する（Collective\Html・LaravelStapler・VeryBasicAuth）
+        Collective\Html\HtmlServiceProvider::class,
+        Codesleeve\LaravelStapler\Providers\L5ServiceProvider::class,
+        Olssonm\VeryBasicAuth\VeryBasicAuthServiceProvider::class,
     ],
 
     /*
@@ -226,6 +230,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        //使用するライブラリのFacadeをエイリアスに追加する(Collective\Htmlのみ)
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];
